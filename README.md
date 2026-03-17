@@ -1,17 +1,17 @@
-# Diabetes Prediction using Machine Learning
+# Diabetes Prediction Using Machine Learning
 
-A machine learning project that predicts whether a person is diabetic based on medical diagnostic measurements from the Pima Indians Diabetes dataset.
+This project predicts whether a person is diabetic based on medical diagnostic measurements from the Pima Indians Diabetes dataset.
 
-## Project Summary
+## Overview
 
-This project uses a supervised classification workflow in a Jupyter Notebook:
+The notebook follows a complete binary classification pipeline:
 
-1. Loads and explores the dataset from diabetes.csv.
-2. Splits features and target variable (Outcome).
-3. Standardizes feature values using StandardScaler.
-4. Trains a Support Vector Machine classifier with a linear kernel.
-5. Evaluates model performance using accuracy on train and test data.
-6. Performs inference on custom input samples.
+1. Load and inspect the dataset.
+2. Separate features and target (`Outcome`).
+3. Standardize features using `StandardScaler`.
+4. Split into train/test sets with stratification.
+5. Train an SVM classifier (`SVC` with linear kernel).
+6. Evaluate using accuracy and run sample predictions.
 
 ## Tech Stack
 
@@ -21,58 +21,88 @@ This project uses a supervised classification workflow in a Jupyter Notebook:
 - scikit-learn
 - Jupyter Notebook
 
-## Repository Structure
+## Project Structure
 
-- Diabetes prediction using ML.ipynb: Main notebook containing data analysis, training, evaluation, and prediction.
-- diabetes.csv: Dataset used for model training and testing.
-- requirements.txt: Standard dependency file for Python environments.
-- requirement.txt: Alias dependency file included for compatibility.
+- `Diabetes prediction using ML.ipynb` - Main notebook for EDA, training, evaluation, and inference
+- `diabetes.csv` - Input dataset
+- `requirements.txt` - Primary Python dependencies
+- `requirement.txt` - Compatibility alias (references `requirements.txt`)
+- `.gitignore` - Standard Python/Jupyter ignore rules
+- `LICENSE` - MIT License
 
-## Getting Started
+## Results
+
+Model performance from the current notebook run:
+
+| Metric | Value |
+|--------|-------|
+| Training Accuracy | 77.27% |
+| Test Accuracy | 77.27% |
+
+## Screenshots / Output Snapshot
+
+You can add notebook output screenshots in an `assets/` folder and reference them here for stronger project presentation on GitHub.
+
+Example markdown once screenshot is added:
+
+```md
+![Model Output](assets/model-output.png)
+```
+
+## Setup and Run
 
 ### 1. Clone the repository
 
-Use your repository URL after pushing to GitHub.
+```bash
+git clone https://github.com/HARSH-7858/Diabetes-prediction-using-ML.git
+cd Diabetes-prediction-using-ML
+```
 
 ### 2. Create and activate a virtual environment
 
 Windows (PowerShell):
+
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
 
 macOS/Linux:
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 ### 3. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-### 4. Run the notebook
+### 4. Launch notebook
 
+```bash
 jupyter notebook
+```
 
-Then open Diabetes prediction using ML.ipynb and run all cells in order.
+Open `Diabetes prediction using ML.ipynb` and run all cells in order.
 
-## Model Details
+## Model Configuration
 
-- Algorithm: Support Vector Classifier (SVC)
-- Kernel: linear
-- Test split: 20 percent
-- Data split strategy: stratified by target class
-- Random state: 2
-- Feature scaling: StandardScaler
+- Algorithm: Support Vector Classifier (`SVC`)
+- Kernel: `linear`
+- Test size: `0.2`
+- Stratification: `Outcome`
+- Random state: `2`
+- Feature scaling: `StandardScaler`
 
-## Notes
+## Future Enhancements
 
-- Ensure diabetes.csv is in the same directory as the notebook.
-- For reproducibility, keep package versions pinned or constrained in requirements files.
-
-## Future Improvements
-
-- Add model persistence (joblib or pickle).
-- Add cross-validation and additional evaluation metrics (precision, recall, F1, ROC-AUC).
-- Package prediction logic into a reusable Python script or API.
+- Add model persistence with `joblib`.
+- Track additional metrics: precision, recall, F1-score, ROC-AUC.
+- Add cross-validation.
+- Refactor notebook logic into a reusable Python script or API.
 
 ## Author
 
